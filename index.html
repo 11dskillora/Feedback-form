@@ -169,7 +169,7 @@
       <h1>School Exhibition Feedback</h1>
       <p class="subtitle">Your thoughts help us make the next exhibition even better.</p>
 
-      <form method="post" action="https://script.google.com/macros/s/AKfycbyLdFmV3A2og8qOXANo3f38ltOWJRuj1jlKFrkCVUAGG4Dw8VEdDfus9fZaIYAADIDQiw/exec" autocomplete="off"  target="hidden_iframe">
+      <form method="post" action="https://script.google.com/macros/s/AKfycbyLdFmV3A2og8qOXANo3f38ltOWJRuj1jlKFrkCVUAGG4Dw8VEdDfus9fZaIYAADIDQiw/exec" autocomplete="off"  target="hidden_iframe" onsubmit="handleSubmit()">
         <div class="field">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Enter your name" required />
@@ -205,10 +205,21 @@
       <footer>© 11-D Skillora Exhibition Team</footer>
     </div>
 <script>
-  document.getElementById("feedbackForm").addEventListener("submit", function () {
-    document.getElementById("successMsg").style.display = "block";
-    this.reset();
-  });
+  function handleSubmit() {
+    const msg = document.getElementById("successMsg");
+
+    // show success message
+    msg.style.display = "block";
+
+    // reset form AFTER submit
+    setTimeout(() => {
+      document.getElementById("feedbackForm").reset();
+    }, 100);
+
+    // allow form to submit to iframe
+    return true;
+  }
 </script>
+
   </body>
 </html>
