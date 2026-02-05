@@ -162,6 +162,9 @@
   </head>
 <iframe name="hidden_iframe" style="display:none;"></iframe>
   <body>
+    <div id="successMsg" class="success" style="display:none;">
+  Thank you! Your feedback has been submitted.
+</div>
     <div class="card">
       <h1>School Exhibition Feedback</h1>
       <p class="subtitle">Your thoughts help us make the next exhibition even better.</p>
@@ -202,13 +205,7 @@
       <footer>© 11-D Skillora Exhibition Team</footer>
     </div>
 <script>
-  const form = document.getElementById("feedbackForm");
-  const msg = document.getElementById("successMsg");
-
-  form.addEventListener("submit", () => {
-    msg.style.display = "block";
-    form.reset();
-  });
+  alert("JS is running");
 </script>
   </body>
 </html>
