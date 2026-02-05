@@ -205,7 +205,10 @@
       <footer>© 11-D Skillora Exhibition Team</footer>
     </div>
 <script>
-  alert("JS is running");
+  document.getElementById("feedbackForm").addEventListener("submit", function () {
+    document.getElementById("successMsg").style.display = "block";
+    this.reset();
+  });
 </script>
   </body>
 </html>
